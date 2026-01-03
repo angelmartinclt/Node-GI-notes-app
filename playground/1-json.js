@@ -1,0 +1,30 @@
+const fs = require('fs')
+
+// const book = {
+//     title: 'Ego is the Enemy',
+//     author: 'Ryan Holiday'
+// }
+
+// const bookJSON = JSON.stringify(book)
+// fs.writeFileSync('1-json.json', bookJSON)
+
+// const dataBuffer = fs.readFileSync('1-json.json')
+// const dataJSON = dataBuffer.toString()
+// const data = JSON.parse(dataJSON)
+// console.log(data.title)
+
+// challenge: work with JSON and the file system
+    // load and parse the JSON data
+    // change the name and age property using your info
+    // stringify the changed object and overwrite the original data
+    // test your work by viewing data in the JSON file 
+
+const dataBuffer = fs.readFileSync('1-json.json')
+const dataJSON = dataBuffer.toString()
+const user = JSON.parse(dataJSON)
+
+user.name = 'Gunther'
+user.age = 54
+
+const userJSON = JSON.stringify(user)
+fs.writeFileSync('1-json.json', userJSON)
